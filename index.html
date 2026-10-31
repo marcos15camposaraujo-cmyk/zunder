@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu Nome · Montagem, Reparo de Computadores e Criação de Sites</title>
+<style>
+:root{--bg:#fff;--fg:#14171f;--mu:#5b6270;--cd:#f3f5f9;--bd:#e3e7ee;--ac:#2563eb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1118;--fg:#eef1f6;--mu:#9aa3b2;--cd:#171b25;--bd:#262c3a}}
+:root[data-theme="dark"]{--bg:#0e1118;--fg:#eef1f6;--mu:#9aa3b2;--cd:#171b25;--bd:#262c3a}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}section.w{padding:56px 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--bd);z-index:9}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+.brand{font-weight:800;font-size:18px}nav{display:flex;gap:16px;font-size:15px;flex-wrap:wrap}
+a{color:inherit;text-decoration:none}nav a:hover{color:var(--ac)}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;margin:.3em 0}h2{font-size:28px;margin:0 0 24px}h3{margin:.2em 0}
+.hero{background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 14%,var(--bg)),var(--bg));padding:72px 0 64px}
+.kick{color:var(--ac);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:13px;margin:0}
+.lead{font-size:18px;color:var(--mu);max-width:620px;white-space:pre-line}.pl{white-space:pre-line;color:var(--mu)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;background:var(--ac);color:#fff;border:2px solid var(--ac);padding:10px 20px;border-radius:10px;font:600 15px inherit;font-family:inherit;cursor:pointer}
+.btn.o{background:transparent;color:var(--fg);border-color:var(--bd)}.btn.sm{padding:4px 10px;font-size:13px;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-bottom:20px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:20px;position:relative}
+.card p{color:var(--mu);margin:.4em 0 0;white-space:pre-line}.ic{font-size:30px}.card .x{position:absolute;top:8px;right:8px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.stats li{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:16px;text-align:center}
+.stats b{display:block;font-size:26px;color:var(--ac)}.stats span{font-size:13px;color:var(--mu)}
+.meta{font-size:13px;color:var(--mu)}.tag{background:var(--cd);border:1px solid var(--bd);border-radius:99px;padding:2px 10px;font-size:12px;margin-left:6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 24px}.chip{border:1px solid var(--bd);background:var(--cd);color:var(--fg);padding:5px 14px;border-radius:99px;cursor:pointer;font:inherit;font-size:14px}.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+input,textarea{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--fg);font:inherit;margin:4px 0 12px}
+label{display:block;font-size:14px;color:var(--mu)}label.ck{display:flex;gap:8px;align-items:center}label.ck input{width:auto;margin:0}
+.art{max-width:720px}.art h3{margin-top:1.6em}.art p{font-size:17px}
+.ed{background:none;border:0;color:var(--mu);opacity:.45;font:inherit;font-size:12px;cursor:pointer;margin-top:8px}.ed:hover{opacity:1}
+.th{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin-bottom:12px;display:block}.ph{width:100%;border-radius:14px;margin:8px 0 20px}
+footer{border-top:1px solid var(--bd);padding:28px 0;color:var(--mu);font-size:14px;text-align:center}
+[contenteditable]{outline:2px dashed color-mix(in srgb,var(--ac) 55%,transparent);outline-offset:3px;border-radius:4px;min-width:2ch}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;z-index:20;pointer-events:none}
+#bar>*{pointer-events:auto}#bar.on{background:var(--cd);border-top:1px solid var(--bd)}
+.mb{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px;z-index:30;overflow:auto}
+.mc{background:var(--bg);border-radius:14px;padding:22px;width:100%;max-width:560px;max-height:92vh;overflow:auto}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ac{display:flex;gap:8px;justify-content:flex-end}
+#toast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 70px);left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:99px;z-index:40;font-size:14px}
+</style></head><body>
+<div id="app"></div><div id="bar"></div><div id="modal"></div>
+<script id="data" type="application/json">{"s":{"brand":"💻 Seu Nome","color":"#2563eb","wa":"5511958463714","email":"Marcos15camposaraujo@gmail.com","cy":"Atendimento presencial e remoto","hk":"Tecnologia sem dor de cabeça","ht":"Computadores sob medida, consertos rápidos e sites que vendem.","hd":"Monto e reparo computadores e crio sites profissionais para pessoas e empresas.\nAtendimento próximo, orçamento transparente e garantia no serviço.","st":"Meus serviços","ab":"Sou técnico em informática e desenvolvedor web. Ajudo você a ter o computador ideal e uma presença online profissional, com atendimento honesto e prazo combinado.\n\nEdite este texto com a sua história."},"sv":[{"icon":"🖥️","title":"Montagem de computadores","desc":"PCs gamer, de trabalho e edição, com peças escolhidas para o seu orçamento e testes completos."},{"icon":"🔧","title":"Reparo e manutenção","desc":"Diagnóstico e conserto de PCs e notebooks: não liga, lento, superaquecimento, tela e muito mais."},{"icon":"⚡","title":"Upgrade de desempenho","desc":"Troca para SSD, mais memória RAM, placa de vídeo e limpeza com pasta térmica nova."},{"icon":"🛡️","title":"Formatação e remoção de vírus","desc":"Sistema limpo, programas instalados e backup dos seus arquivos com segurança."},{"icon":"🌐","title":"Criação de sites profissionais","desc":"Sites institucionais, portfólios e landing pages rápidos, bonitos e otimizados para o Google."},{"icon":"🛒","title":"Lojas virtuais","desc":"Sua loja online pronta para vender, com pagamento, entrega e painel de gestão."}],"p":[{"id":1,"t":"5 sinais de que seu computador precisa de manutenção","c":"Manutenção","d":"2026-10-20","e":"Lentidão, barulho e travamentos podem avisar que algo vai falhar. Veja como se antecipar.","b":"Seu computador costuma dar avisos antes de parar de vez. Fique atento.\n\n## 1. Lentidão constante\nSe até abrir uma pasta demora, pode ser HD antigo, pouca memória ou excesso de programas.\n\n## 2. Superaquecimento\nVentoinhas barulhentas e desligamentos repentinos pedem **limpeza e troca de pasta térmica**.\n\n## 3. Telas azuis e travamentos\nSão sinais de falha de memória, disco ou driver.\n\n## Quando procurar um técnico?\nSempre que notar esses sintomas. Quanto antes, mais barato e seguro é o conserto.","pub":true},{"id":2,"t":"Por que sua empresa precisa de um site profissional","c":"Sites","d":"2026-10-25","e":"Ter presença online gera confiança e traz clientes todos os dias. Entenda os motivos.","b":"Hoje, quem procura um serviço pesquisa primeiro no celular.\n\n## Credibilidade\nUm site passa seriedade e mostra que seu negócio é de verdade.\n\n## Clientes 24 horas por dia\nSeu site apresenta seus serviços mesmo quando você está dormindo.\n\n## Melhor posição no Google\nSites rápidos e bem estruturados aparecem mais nas buscas.\n\nQuer um site para o seu negócio? Fale comigo pelo WhatsApp.","pub":true}]}</script>
+<script>
+const $=s=>document.querySelector(s),D=document.getElementById('data'),S=JSON.parse(D.textContent);
+let edit=false,can=false,dirty=false,rev=false,fc=0,q='',cat='';
+const esc=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const CE=()=>edit?' contenteditable="plaintext-only"':'';
+const T=(k,tag,cls='')=>`<${tag} class="${cls}" data-k="${k}"${CE()}>${esc(S.s[k])}</${tag}>`;
+const F=(i,f,tag,cls='')=>`<${tag} class="${cls}" data-si="${i}" data-f="${f}"${CE()}>${esc(S.sv[i][f])}</${tag}>`;
+const fd=d=>new Date(d+'T12:00').toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+const md=t=>esc(t).split(/\n{2,}/).map(b=>{b=b.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');return b.startsWith('## ')?`<h3>${b.slice(3).split('\n')[0]}</h3>`+(b.includes('\n')?`<p>${b.split('\n').slice(1).join('<br>')}</p>`:''):`<p>${b.replace(/\n/g,'<br>')}</p>`}).join('');
+const wa=t=>`https://wa.me/${S.s.wa}?text=${encodeURIComponent(t||'Olá! Vim pelo seu site e gostaria de um orçamento.')}`;
+const vis=p=>edit||p.pub;
+const sorted=()=>S.p.filter(vis).sort((a,b)=>b.d.localeCompare(a.d));
+function toast(m){const e=document.createElement('div');e.id='toast';e.textContent=m;document.body.append(e);setTimeout(()=>e.remove(),2500)}
+function card(p){return `<article class="card">${p.img?`<img src="${esc(src(p.img))}" alt="" class="th">`:''}<div class="meta">${fd(p.d)}<span class="tag">${esc(p.c)}</span>${p.pub?'':'<span class="tag">Rascunho</span>'}</div><h3><a href="#p-${p.id}">${esc(p.t)}</a></h3><p>${esc(p.e)}</p><p><a href="#p-${p.id}" style="color:var(--ac)">Ler artigo →</a>${edit?` <button class="btn o sm" data-a="editpost" data-id="${p.id}">Editar</button> <button class="btn o sm" data-a="delpost" data-id="${p.id}">Excluir</button>`:''}</p></article>`}
+function nav(){return `<header><div class="w"><div class="brand">${T('brand','span')}</div><nav><a href="#" data-go="top">Início</a><a href="#" data-go="servicos">Serviços</a><a href="#" data-go="sobre">Sobre</a><a href="#blog">Blog</a><a href="#" data-go="contato">Contato</a></nav></div></header>`}
+function home(){return `<section class="hero" id="top"><div class="w">${T('hk','p','kick')}${T('ht','h1')}${T('hd','p','lead')}<div class="cta"><a class="btn" href="${wa()}" target="_blank" rel="noopener">Pedir orçamento</a><a class="btn o" href="#" data-go="servicos">Ver serviços</a></div></div></section>
+<section class="w" id="servicos"><h2>${T('st','span')}</h2><div class="grid">${S.sv.map((x,i)=>`<article class="card">${edit?`<button class="btn o sm x" data-a="delsv" data-i="${i}">✕</button>`:''}${F(i,'icon','div','ic')}${F(i,'title','h3')}${F(i,'desc','p')}</article>`).join('')}</div>${edit?'<button class="btn o" data-a="addsv">＋ Adicionar serviço</button>':''}</section>
+<section class="w" id="sobre"><div><h2>Sobre mim</h2>${T('ab','p','pl')}</div></section>
+<section class="w"><h2>Do blog</h2><div class="grid">${sorted().slice(0,3).map(card).join('')||'<p class="meta">Nenhum post ainda.</p>'}</div><a class="btn o" href="#blog">Ver todos os posts</a></section>
+${contact()}`}
+function contact(){return `<section class="w" id="contato"><h2>Vamos conversar?</h2><div class="two"><div><label>Seu nome<input id="cn"></label><label>Mensagem<textarea id="cm" rows="4" placeholder="Conte o que você precisa…"></textarea></label><button class="btn" data-a="send">Enviar pelo WhatsApp</button></div><div><p><b>WhatsApp:</b> <a href="${wa()}" target="_blank" rel="noopener" style="color:var(--ac)">+55 11 95846-3714</a></p><p><b>E-mail:</b> <a href="mailto:${esc(S.s.email)}" style="color:var(--ac)">${esc(S.s.email)}</a></p><p class="pl">${esc(S.s.cy)}</p></div></div></section>`}
+function plist(){const l=sorted().filter(p=>(!cat||p.c===cat)&&(!q||(p.t+p.e+p.b).toLowerCase().includes(q.toLowerCase())));return l.map(card).join('')||'<p class="meta">Nenhum post encontrado.</p>'}
+function blog(){const cs=[...new Set(S.p.filter(vis).map(p=>p.c))];return `<section class="w"><h2>Blog</h2>${edit?'<button class="btn" data-a="newpost">＋ Novo post</button>':''}<input id="q" placeholder="Buscar no blog…" value="${esc(q)}" style="margin-top:12px"><div class="chips"><button class="chip${cat?'':' on'}" data-a="cat" data-v="">Todos</button>${cs.map(c=>`<button class="chip${cat===c?' on':''}" data-a="cat" data-v="${esc(c)}">${esc(c)}</button>`).join('')}</div><div class="grid" id="pl">${plist()}</div></section>`}
+function post(id){const p=S.p.find(x=>x.id===id);if(!p||!vis(p))return blog();return `<section class="w art"><a href="#blog" style="color:var(--ac)">← Voltar ao blog</a><p class="meta" style="margin-top:20px">${fd(p.d)}<span class="tag">${esc(p.c)}</span></p><h1 style="font-size:clamp(28px,5vw,40px)">${esc(p.t)}</h1>${p.img?`<img src="${esc(src(p.img))}" alt="${esc(p.t)}" class="ph">`:''}${md(p.b)}<div class="cta"><a class="btn" href="${wa('Olá! Li o artigo “'+p.t+'” e quero conversar.')}" target="_blank" rel="noopener">Falar no WhatsApp</a>${edit?`<button class="btn o" data-a="editpost" data-id="${p.id}">Editar post</button>`:''}</div></section>`}
+function render(){const h=location.hash.slice(1),m=h.match(/^p-(\d+)$/);
+ $('#app').innerHTML=nav()+(m?post(+m[1]):h==='blog'?blog():home())+`<footer><div class="w">© ${new Date().getFullYear()} ${esc(S.s.brand.replace(/^\S*\s/,''))} · Todos os direitos reservados${!edit?'<br><button class="ed" data-a="open">✏️ Editar</button>':''}</div></footer>`;
+ if(location.hash==='#editar')rev=true;document.documentElement.style.setProperty('--ac',S.s.color);bar()}
+function bar(){const b=$('#bar');b.className=edit?'on':'';
+ b.innerHTML=!can?'':edit?`<button class="btn o sm" data-a="edit">Sair da edição</button><button class="btn o sm" data-a="set">⚙ Configurações</button><button class="btn o sm" data-a="disc">Desconectar</button><button class="btn sm" data-a="pub">${dirty?'● ':''}Salvar e publicar</button>`:''}
+function mark(){if(!dirty){dirty=true;bar()}}
+function modal(h){$('#modal').innerHTML=h?`<div class="mb"><div class="mc">${h}</div></div>`:''}
+function openPost(id){const p=S.p.find(x=>x.id===id)||{id:0,t:'',c:'Dicas',d:new Date().toISOString().slice(0,10),e:'',b:'',pub:true,img:''};curImg=p.img||'';
+ modal(`<h3>${id?'Editar':'Novo'} post</h3><label>Título<input id="pt" value="${esc(p.t)}"></label><div class="r2"><label>Categoria<input id="pc" value="${esc(p.c)}"></label><label>Data<input id="pd" type="date" value="${p.d}"></label></div><label>Resumo<textarea id="pe" rows="2">${esc(p.e)}</textarea></label><label>Foto do post (opcional)<input id="pf" type="file" accept="image/*"></label><div id="pv"></div><label>Texto (linha em branco = novo parágrafo · ## Subtítulo · **negrito**)<textarea id="pb" rows="10">${esc(p.b)}</textarea></label><label class="ck"><input type="checkbox" id="pp"${p.pub?' checked':''}> Publicado (desmarque para salvar como rascunho)</label><br><div class="ac"><button class="btn o" data-a="closem">Cancelar</button><button class="btn" data-a="savepost" data-id="${p.id}">Salvar post</button></div>`);showImg()}
+function openSet(){const s=S.s;modal(`<h3>Configurações</h3><label>Nome da marca<input id="sb" value="${esc(s.brand)}"></label><label>WhatsApp (com DDI e DDD, só números)<input id="sw" value="${esc(s.wa)}"></label><label>E-mail<input id="se" value="${esc(s.email)}"></label><label>Cidade / região de atendimento<input id="sc" value="${esc(s.cy)}"></label><label>Cor principal<input id="sk" type="color" value="${esc(s.color)}"></label><div class="ac"><button class="btn o" data-a="closem">Cancelar</button><button class="btn" data-a="saveset">Aplicar</button></div>`)}
+let curImg='',GH=null,LOCAL={};
+const enc=new TextEncoder(),b64=u=>{let t='';for(let i=0;i<u.length;i+=8192)t+=String.fromCharCode.apply(null,u.subarray(i,i+8192));return btoa(t)},unb=t=>Uint8Array.from(atob(t),c=>c.charCodeAt(0)),src=u=>LOCAL[u]||u;
+async function key(pw,salt){const m=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:250000,hash:'SHA-256'},m,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function lock(pw,cfg){const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},await key(pw,salt),enc.encode(JSON.stringify(cfg))));localStorage.setItem('ghcfg',JSON.stringify({s:b64(salt),i:b64(iv),c:b64(ct)}))}
+async function unlock(pw){const o=JSON.parse(localStorage.getItem('ghcfg'));return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:unb(o.i)},await key(pw,unb(o.s)),unb(o.c))))}
+async function api(path,opt={}){const r=await fetch(`https://api.github.com/repos/${GH.repo}/contents/${path}`+(opt.method?'':`?ref=${encodeURIComponent(GH.br)}&t=${Date.now()}`),{...opt,headers:{Authorization:'Bearer '+GH.token,Accept:'application/vnd.github+json','Content-Type':'application/json'}});
+ if(!r.ok)throw new Error(r.status===401?'Token inválido ou expirado.':r.status===404?'Não encontrei o repositório ou o arquivo (confira o nome, a branch e se o index.html foi enviado).':r.status===403||r.status===422?'Sem permissão. Confira se o token tem “Contents: Read and write” neste repositório.':'Erro '+r.status+' do GitHub.');return r.json()}
+async function put(path,bytes,msg){let sha;try{sha=(await api(path)).sha}catch(e){if(!/^Não encontrei/.test(e.message))throw e}
+ return api(path,{method:'PUT',body:JSON.stringify({message:msg,content:b64(bytes),branch:GH.br,sha})})}
+function showImg(){$('#pv').innerHTML=curImg?`<img src="${esc(src(curImg))}" class="th" style="max-width:240px"><button class="btn o sm" data-a="rmimg">Remover foto</button>`:''}
+async function upImg(f){const pv=$('#pv');pv.textContent='Enviando foto…';
+ try{const bm=await createImageBitmap(f),k=Math.min(1,1600/Math.max(bm.width,bm.height)),c=document.createElement('canvas');c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);
+ const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(bm,0,0,c.width,c.height);
+ const bl=await new Promise(r=>c.toBlob(r,'image/jpeg',.85)),p='imagens/'+Date.now()+'.jpg';
+ await put(p,new Uint8Array(await bl.arrayBuffer()),'Nova foto do blog');LOCAL[p]=URL.createObjectURL(bl);curImg=p;showImg()}
+ catch(e){pv.textContent='Não foi possível enviar a foto: '+e.message}}
+async function publish(){toast('Publicando…');
+ try{const c=document.documentElement.cloneNode(true);['#app','#bar','#modal'].forEach(q=>c.querySelector(q).innerHTML='');c.querySelectorAll('#toast').forEach(e=>e.remove());
+ c.querySelector('#data').textContent=JSON.stringify(S).replace(/</g,'\\u003c');
+ await put(GH.file,enc.encode('<!DOCTYPE html>\n'+c.outerHTML),'Atualização pelo painel do site');dirty=false;bar();toast('Publicado! O site atualiza em cerca de 1 minuto.')}
+ catch(e){toast('Não foi possível publicar: '+e.message)}}
+function openLogin(){const st=localStorage.getItem('ghcfg'),has=false;if(st){try{GH=JSON.parse(st);edit=true;can=true;render();return}catch(e){localStorage.removeItem('ghcfg')}}
+ modal(has?`<h3>🔒 Área do administrador</h3><label>Senha<input id="lp" type="password" autocomplete="current-password"></label><div id="le" class="meta" style="color:#d33"></div><div class="ac"><button class="btn o" data-a="closem">Cancelar</button><button class="btn" data-a="login">Entrar</button></div><p class="meta"><a href="#" data-a="reset" style="text-decoration:underline">Esqueci a senha / trocar token</a></p>`
+ :`<h3>🔒 Conectar ao GitHub</h3><p class="meta">Configuração feita uma única vez neste aparelho. O token fica guardado só no seu navegador, neste aparelho. Nas próximas vezes, o botão Editar entra direto.</p><label>Repositório (usuário/nome)<input id="gr" value="marcos15camposaraujo-cmyk/ultrabet"></label><div class="r2"><label>Branch<input id="gb" value="main"></label><label>Arquivo do site<input id="gf" value="index.html"></label></div><label>Token do GitHub<input id="gt" type="password" placeholder="github_pat_…"></label><div id="le" class="meta" style="color:#d33"></div><div class="ac"><button class="btn o" data-a="closem">Cancelar</button><button class="btn" data-a="setup">Salvar e entrar</button></div>`)}
+async function doLogin(){const pw=$('#lp').value;$('#le').textContent='Verificando…';try{GH=await unlock(pw)}catch(e){$('#le').textContent='Senha incorreta.';return}modal('');edit=true;can=true;render()}
+async function doSetup(){const v=i=>$('#'+i).value.trim(),er=m=>$('#le').textContent=m,
+ cfg={repo:v('gr').replace(/^https?:\/\/github\.com\//,'').replace(/\.git$/,'').replace(/\/$/,''),br:v('gb')||'main',file:v('gf')||'index.html',token:v('gt')};
+ if(!/^[^\/\s]+\/[^\/\s]+$/.test(cfg.repo))return er('Informe o repositório no formato usuario/nome.');
+ if(!cfg.token)return er('Cole o token do GitHub.');
+ er('Verificando…');GH=cfg;try{await api(cfg.file)}catch(e){GH=null;return er(e.message)}
+ localStorage.setItem('ghcfg',JSON.stringify(cfg));modal('');edit=true;can=true;render();toast('Conectado ao GitHub!')}
+document.addEventListener('click',e=>{
+ const g=e.target.closest('[data-go]');if(g){e.preventDefault();const go=()=>(document.getElementById(g.dataset.go)||document.body).scrollIntoView({behavior:'smooth'});if(location.hash.length>1){location.hash='';setTimeout(go,100)}else go();return}
+ const el=e.target.closest('[data-a]');if(!el)return;const a=el.dataset.a,id=+el.dataset.id,V=i=>document.getElementById(i).value;
+ const two=()=>{if(!el.dataset.c){el.dataset.c=1;el.textContent='Confirmar?';return false}return true};
+ if(a==='open')openLogin();else if(a==='login')doLogin();else if(a==='setup')doSetup();
+ else if(a==='disc'){localStorage.removeItem('ghcfg');edit=false;can=false;GH=null;dirty=false;render();toast('Token removido deste aparelho.')}
+ else if(a==='edit'){if(dirty&&!el.dataset.c){el.dataset.c=1;el.textContent='Sair sem publicar?';return}edit=false;can=false;GH=null;dirty=false;render()}
+ else if(a==='addsv'){S.sv.push({icon:'✨',title:'Novo serviço',desc:'Descreva o serviço aqui.'});mark();render()}
+ else if(a==='delsv'){if(two()){S.sv.splice(+el.dataset.i,1);mark();render()}}
+ else if(a==='newpost')openPost(0);else if(a==='editpost')openPost(id);
+ else if(a==='delpost'){if(two()){S.p=S.p.filter(p=>p.id!==id);mark();location.hash.startsWith('#p-')?location.hash='blog':render()}}
+ else if(a==='savepost'){const o={t:V('pt').trim()||'Sem título',c:V('pc').trim()||'Geral',d:V('pd'),e:V('pe'),b:V('pb'),pub:$('#pp').checked,img:curImg};
+  if(id){Object.assign(S.p.find(p=>p.id===id),o)}else S.p.push({id:Math.max(0,...S.p.map(p=>p.id))+1,...o});modal('');mark();render()}
+ else if(a==='set')openSet();
+ else if(a==='saveset'){Object.assign(S.s,{brand:V('sb'),wa:V('sw').replace(/\D/g,''),email:V('se'),cy:V('sc'),color:V('sk')});modal('');mark();render()}
+ else if(a==='rmimg'){curImg='';showImg()}
+ else if(a==='closem')modal('');
+ else if(a==='cat'){cat=el.dataset.v;render()}
+ else if(a==='send'){const n=V('cn').trim(),m=V('cm').trim();if(!n||!m){toast('Preencha seu nome e a mensagem');return}open(wa('Olá! Meu nome é '+n+'.\n\n'+m+'\n\n(Mensagem enviada pelo site)'),'_blank')}
+ else if(a==='pub')publish()});
+document.addEventListener('input',e=>{const t=e.target;
+ if(t.id==='q'){q=t.value;$('#pl').innerHTML=plist()}
+ else if(t.dataset&&t.dataset.k){S.s[t.dataset.k]=t.innerText;mark()}
+ else if(t.dataset&&t.dataset.si!=null){S.sv[+t.dataset.si][t.dataset.f]=t.innerText;mark()}});
+document.addEventListener('click',e=>{if(e.target.closest('footer')&&!rev&&++fc>=5){rev=true;bar()}});
+document.addEventListener('change',e=>{if(e.target.id==='pf'&&e.target.files[0])upImg(e.target.files[0])});
+addEventListener('hashchange',()=>{render();scrollTo(0,0)});
+render();
+</script></body></html>
